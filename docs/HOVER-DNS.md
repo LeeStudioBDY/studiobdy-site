@@ -6,22 +6,21 @@ The domain and its email stay at Hover. Only two things change: the record for t
 
 1. Go to https://www.hover.com and sign in.
 2. Click **Domains** in the top bar, then click **studiobdy.com**.
-3. Click the **DNS** tab. You will see a list of records. Today it has:
-   - `A` · `@` · `216.40.34.41` (Hover's parking page)
-   - `A` · `www` · `216.40.34.41`
-   - `MX` · `@` · `10 mx.hover.com.cust.hostedemail.com` ← email, leave alone
+3. Click the **DNS** tab. You will see a list of records. On 29 Oct 2026 it had:
+   - `A` · `*` · `216.40.34.41` (Hover's parking page, for every subdomain)
+   - `A` · `@` · `216.40.34.41` (Hover's parking page, for the bare domain)
    - `TXT` · `@` · `v=spf1 include:_spf.hostedemail.com ~all` ← email, leave alone
+   - `MX` · `@` · `10 mx.hover.com.cust.hostedemail.com` ← email, leave alone
+   - `CNAME` · `mail` · `mail.hover.com.cust.hostedemail.com` ← email (webmail/IMAP host), leave alone
 
 ## 2. Remove the two parking records
 
-Hover will not let an `A` record and a `CNAME` share a name, and the parking IP must go, so:
-
-1. On the row `A · @ · 216.40.34.41`, click the row's menu (⋯ or the pencil) and choose **Delete**. Confirm.
-2. On the row `A · www · 216.40.34.41`, do the same.
+1. On the row `A · @ · 216.40.34.41`, click the ✕ at the right of the row. Confirm.
+2. On the row `A · * · 216.40.34.41`, do the same. Nothing depends on the wildcard; it only sends unknown subdomains to Hover's parking page.
 
 ## 3. Add the records for GitHub Pages
 
-Click **Add a record** and add each of these, one at a time. The fields are **Type**, **Hostname** and **Target** (Hover may call it Value or IP address). Leave TTL at the default.
+Click **Add a record** and add each of these, one at a time. The fields are **Type**, **Hostname** and **Value**. Leave TTL at its default (15 minutes).
 
 | Type | Hostname | Target |
 |---|---|---|
@@ -55,12 +54,13 @@ Optional, for IPv6 (harmless to skip): four `AAAA` records with hostname `@` and
 
 ## 4. Check the list
 
-It should now read, in some order:
+It should now have eight rows, in some order:
 
 - `A` · `@` · four rows, 185.199.108.153 to 185.199.111.153
 - `CNAME` · `www` · `leestudiobdy.github.io`
-- `MX` · `@` · `10 mx.hover.com.cust.hostedemail.com` (unchanged)
 - `TXT` · `@` · `v=spf1 include:_spf.hostedemail.com ~all` (unchanged)
+- `MX` · `@` · `10 mx.hover.com.cust.hostedemail.com` (unchanged)
+- `CNAME` · `mail` · `mail.hover.com.cust.hostedemail.com` (unchanged)
 
 Then tell Claude it is done. Hover's changes usually show up within a few minutes, sometimes up to an hour. Once GitHub sees the records it issues the HTTPS certificate, and the last step is to tick **Enforce HTTPS** in the repository's Pages settings, which Claude will do.
 
