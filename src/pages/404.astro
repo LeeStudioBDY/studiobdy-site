@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page not found" description="That page isn't here.">
+  <section class="hero" style="min-height: 50vh">
+    <div class="container stack gap-m">
+      <p class="eyebrow">404</p>
+      <h1 style="font-size: clamp(36px, 4.5vw, 56px)">That page isn't here.</h1>
+      <p class="lead">The address may be out of date. Everything on the site is one link away.</p>
+      <div class="btn-row">
+        <a href="/" class="btn btn-primary">Home</a>
+        <a href="/services/" class="btn btn-secondary">Services</a>
+        <a href="/contact/" class="btn btn-secondary">Contact</a>
+      </div>
+    </div>
+  </section>
+</Base>

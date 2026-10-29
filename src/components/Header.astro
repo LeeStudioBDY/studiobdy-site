@@ -1,0 +1,22 @@
+---
+// Site header: wordmark, three links and the contact button. No JavaScript —
+// at phone width the links wrap under the wordmark.
+interface Props { current?: string }
+const { current = '' } = Astro.props;
+const links = [
+  { href: '/services/', label: 'Services', key: 'services' },
+  { href: '/about/', label: 'About', key: 'about' },
+  { href: '/contact/', label: 'Contact', key: 'contact' },
+];
+---
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="wordmark" aria-label="Studio BDY home"><span class="mark" aria-hidden="true"></span>Studio BDY</a>
+    <nav class="site-nav" aria-label="Main">
+      {links.map((l) => (
+        <a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>
+      ))}
+      <a href="mailto:lee@studiobdy.com" class="btn btn-primary">Get in touch</a>
+    </nav>
+  </div>
+</header>

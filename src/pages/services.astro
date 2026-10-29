@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+const programme = [
+  ['Programme management', 'Planning, governance and control across workstreams, suppliers and dependencies.'],
+  ['Delivery management', 'Day-to-day delivery leadership from mobilisation to go-live and handover.'],
+  ['Delivery process optimisation & automation', 'Fixing how work flows, defect management and resolution included, and automating the repetitive parts.'],
+  ['Business engagement', 'Keeping the business and the programme pointed at the same outcome.'],
+  ['RFP support', 'Shaping requirements, running the process and evaluating the responses.'],
+  ['Customer & stakeholder management', 'Clear, regular communication up, down and sideways, with no surprises.'],
+  ['Technical problem solving', 'Getting into the detail when a blocker needs unpicking rather than escalating.'],
+  ['Driving teams to deliver results', 'Momentum, accountability and follow-through until the result is in.'],
+];
+---
+<Base
+  title="Services"
+  description="Programme management and governance, AI adoption for small businesses, Excel solutions and automation, and bespoke mobile apps. How Studio BDY works and what each engagement includes."
+  current="services"
+>
+  <section class="hero" style="padding-bottom: 56px; border-bottom: 1px solid var(--line)">
+    <div class="container stack gap-m">
+      <p class="eyebrow">Services</p>
+      <h1 style="max-width: 820px; font-size: clamp(36px, 4.5vw, 56px)">Four things Studio BDY does, one way of working.</h1>
+      <p class="lead">Every engagement starts with a conversation about where you are and what done looks like. Then Studio BDY gets hands-on, embedded with your team, remote or on site.</p>
+      <nav class="pill-row" aria-label="On this page" style="margin-top: 8px">
+        <a class="pill" href="#programme">01 Programme management</a>
+        <a class="pill" href="#ai">02 AI for small businesses</a>
+        <a class="pill" href="#excel">03 Excel &amp; automation</a>
+        <a class="pill" href="#apps">04 Mobile apps</a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="programme" class="section">
+    <div class="container stack gap-xl">
+      <div class="two-col">
+        <div class="stack gap-m">
+          <p class="num" style="font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--accent-ink)">01</p>
+          <h2>Programme management &amp; governance</h2>
+          <p class="muted" style="font-weight: 600; font-size: 15px">Telecoms · Pharma · Public sector</p>
+        </div>
+        <div class="stack gap-m">
+          <p style="font-size: 18px; line-height: 1.6">For directors and programme sponsors who need delivery support they can rely on. Studio BDY takes on the programme, or the part of it that is stuck, and runs it: the plan, the governance, the people and the problems.</p>
+          <p class="muted" style="font-size: 17px">Experienced in regulated, complex environments where several suppliers, workstreams and stakeholders have to move together.</p>
+        </div>
+      </div>
+      <div class="grid" style="--col: 250px; gap: 20px">
+        {programme.map(([name, blurb]) => (
+          <div class="card" style="padding: 24px; gap: 8px">
+            <h3 style="font-size: 18px">{name}</h3>
+            <p>{blurb}</p>
+          </div>
+        ))}
+      </div>
+      <div class="card card-flat" style="border-radius: 20px; padding: 40px; gap: 28px">
+        <h3 style="font-size: 24px; font-weight: 800">How an engagement runs</h3>
+        <div class="grid" style="--col: 240px; gap: 28px">
+          <div class="stack gap-s">
+            <p class="num">Step 1</p>
+            <h4>Engage</h4>
+            <p>A conversation about where the programme is, what is in the way and what done looks like.</p>
+          </div>
+          <div class="stack gap-s">
+            <p class="num">Step 2</p>
+            <h4>Shape</h4>
+            <p>Agree the scope, the cadence and the governance, so everyone knows how decisions get made.</p>
+          </div>
+          <div class="stack gap-s">
+            <p class="num">Step 3</p>
+            <h4>Deliver</h4>
+            <p>Hands-on, embedded with your team, remote or on site, until the result is in and handed over.</p>
+          </div>
+        </div>
+        <p class="small">Typically engaged by a director or programme sponsor. Day rate or fixed scope, agreed up front.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface" style="padding-top: 72px; padding-bottom: 72px">
+    <div class="container stack gap-m">
+      <div id="ai" class="card two-col" style="gap: 24px; --col: 260px">
+        <div class="stack gap-s">
+          <p class="num">02</p>
+          <h2 style="font-size: 26px">AI for small businesses</h2>
+        </div>
+        <div class="stack gap-s">
+          <p style="font-size: 16px; color: var(--ink)">Practical help adopting AI into day-to-day work: finding the tasks worth handing over, setting it up safely, and keeping a person in the loop. It starts with your inbox, your spreadsheets and the admin that eats the week, and it is built so that nothing goes out without someone saying so.</p>
+          <a class="more" href="/#example" style="margin-top: 0">See the email assistant example →</a>
+        </div>
+      </div>
+      <div id="excel" class="card two-col" style="gap: 24px; --col: 260px">
+        <div class="stack gap-s">
+          <p class="num">03</p>
+          <h2 style="font-size: 26px">Excel solutions &amp; automation</h2>
+        </div>
+        <div class="stack gap-s">
+          <p style="font-size: 16px; color: var(--ink)">Models, reporting and automation built to be maintained by your team, not just delivered. From a one-off model to a reporting pack that runs itself, with the formulas and macros documented so they outlast the engagement.</p>
+          <p>Freelance work undertaken across many industries, for clients in several countries, remotely.</p>
+        </div>
+      </div>
+      <div id="apps" class="card two-col" style="gap: 24px; --col: 260px">
+        <div class="stack gap-s">
+          <p class="num">04</p>
+          <h2 style="font-size: 26px">Bespoke mobile apps</h2>
+        </div>
+        <div class="stack gap-s">
+          <p style="font-size: 16px; color: var(--ink)">iPhone and iPad apps built for one specific job, for when off-the-shelf software doesn't fit the way you work. From a working first version on your own devices to a release on the App Store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="panel-cta row">
+        <div class="stack gap-s">
+          <h2 style="font-size: 30px">Talk it through</h2>
+          <p class="muted">A short call is the quickest way to find out whether Studio BDY is the right fit.</p>
+        </div>
+        <a href="mailto:lee@studiobdy.com" class="btn btn-primary">Email lee@studiobdy.com</a>
+      </div>
+    </div>
+  </section>
+</Base>
